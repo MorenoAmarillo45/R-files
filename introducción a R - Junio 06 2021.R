@@ -1,12 +1,27 @@
+# Help tools in R
+
+help("mean")
+?mean
+help(package = "stats")
+
+#Directorios de trabajo: 
+
+# Conocer el directorio: 
+getwd()
+
+#Cambiar directorio
+setwd("nueva direcciÃ³n pero con \")
+
+
 #Ejercicios estructuras de datos
 
 #Vectores
 
-#Múltiplos de 2 desde 1 hasta el 49
+#MÃºltiplos de 2 desde 1 hasta el 49
 
-2:49 #este da todos los números del 2 al 49, no solo los mpultiplos
+2:49 #este da todos los nÃºmeros del 2 al 49, no solo los mpultiplos
 
-seq(2, 49, by=2) #este sí da los múltiplos de 2
+seq(2, 49, by=2) #este sÃ­ da los mÃºltiplos de 2
 
 2*1:49
 2*1:24
@@ -34,9 +49,9 @@ c(2,3,1,2,1)
 
 c('naranja', 'rojo', "azul", 'amarillo', 'morado')
 
-#Ejercicio A6. Los valores en la posición 10 al 12 del vector del ej A1
+#Ejercicio A6. Los valores en la posiciÃ³n 10 al 12 del vector del ej A1
 
-#ojo en R todo empieza en la posición 1 :o
+#ojo en R todo empieza en la posiciÃ³n 1 :o
 
 EA6 <- seq(2,49,by=2)
 EA6[10]
@@ -63,7 +78,7 @@ EA6
 
 c(1:5,8:10)
 
-#ahora si quiero esos elementos del vector EA6, usamos la concatenación
+#ahora si quiero esos elementos del vector EA6, usamos la concatenaciÃ³n
 
 EA6[c(1:5,8:10)]
 
@@ -113,24 +128,24 @@ matrix(datos, nrow=3, ncol=2, byrow = TRUE)
 matrix(datos, nrow=3, ncol=2, byrow = FALSE)
 
 
-###Buscar la transpuesta y la inversa, hay funciones pero podríamos 
-####hacer nuestra función como ejercicio e.e
+###Buscar la transpuesta y la inversa, hay funciones pero podrÃ­amos 
+####hacer nuestra funciÃ³n como ejercicio e.e
 
 a <- 1:4
 b <- 11:13
 c <- 21:25
 
 (ej1 <- cbind(a,b,c)) ###INVESTIGAR   
-#también está la función rbind)
+#tambiÃ©n estÃ¡ la funciÃ³n rbind)
 
 
-#función dim devuelve las dimenciones de la matriz
+#funciÃ³n dim devuelve las dimenciones de la matriz
 length(a)
 
 
 #DATA FRAMES
 
-#Ejercicio C1: Crea un dataframe vacío.
+#Ejercicio C1: Crea un dataframe vacÃ­o.
 
 data.frame()
 
@@ -142,20 +157,20 @@ v2 <- factor(c("Si", "No", "Si", "No"))
 v4 <- c(TRUE, FALSE, TRUE, TRUE)
 
 EC2 <- data.frame(v1,v2,v3,v4)
-colnames(EC2) <-  c("numero", "SiNO", "nombre", "lógico")
+colnames(EC2) <-  c("numero", "SiNO", "nombre", "lÃ³gico")
 
 #Ejercicio C3: Obtener la estructura del data frame 2
 
 str(EC2)
 
 
-#Ejercicio C4 : Obtén el resumen estadístico y naturaleza de los datos del dataframe del ej. C2
+#Ejercicio C4 : ObtÃ©n el resumen estadÃ­stico y naturaleza de los datos del dataframe del ej. C2
 
 
 summary(EC2)
 
 
-#Ejercicio C5: Extra una columna específica del dataframe del ej. C2 usando su nombre de columna
+#Ejercicio C5: Extra una columna especÃ­fica del dataframe del ej. C2 usando su nombre de columna
 
 EC2$nombre
 
@@ -168,7 +183,7 @@ EC2[,1:2]
 
 EC2[c(3,4),c(1,3)] ##Revisar
 
-#Ejercicio C8: Añadir una quinta columna al dataframe 2.
+#Ejercicio C8: AÃ±adir una quinta columna al dataframe 2.
 
 numero2 <- c(6,3,5,2)
 
@@ -176,10 +191,10 @@ EC2 <- cbind(EC2,numero2)
 EC2
 
 
-#Ejercicio C9: Añadir más filas al data frame 2
+#Ejercicio C9: AÃ±adir mÃ¡s filas al data frame 2
 
 datosextra <- data.frame(8.4, factor("Si"), "Federico", FALSE, 4)
-names(datosextra) <- c("numero", "SiNO", "nombre", "lógico", "numero2")
+names(datosextra) <- c("numero", "SiNO", "nombre", "lÃ³gico", "numero2")
 
 EC2 <- rbind(EC2, datosextra)
 EC2
